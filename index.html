@@ -52,10 +52,6 @@
                     <div class="step-number">2</div>
                     <div class="step-label">Nouveau mot de passe</div>
                 </div>
-                <div class="step" id="step3">
-                    <div class="step-number">3</div>
-                    <div class="step-label">Finalisation</div>
-                </div>
             </div>
             
             <div class="security-notice">
@@ -113,57 +109,6 @@
                         </button>
                     </div>
                     <p class="form-hint">Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial</p>
-                    <div class="password-strength">
-                        <div class="strength-meter">
-                            <div class="meter-section" id="meter-section-1"></div>
-                            <div class="meter-section" id="meter-section-2"></div>
-                            <div class="meter-section" id="meter-section-3"></div>
-                            <div class="meter-section" id="meter-section-4"></div>
-                        </div>
-                        <span class="strength-text" id="strength-text">Faible</span>
-                    </div>
-                    <div class="password-criteria">
-                        <div class="criteria-item" id="length-criteria">
-                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v4"></path>
-                                <path d="M12 16h.01"></path>
-                            </svg>
-                            <span>Au moins 8 caractères</span>
-                        </div>
-                        <div class="criteria-item" id="uppercase-criteria">
-                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v4"></path>
-                                <path d="M12 16h.01"></path>
-                            </svg>
-                            <span>Au moins une majuscule</span>
-                        </div>
-                        <div class="criteria-item" id="lowercase-criteria">
-                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v4"></path>
-                                <path d="M12 16h.01"></path>
-                            </svg>
-                            <span>Au moins une minuscule</span>
-                        </div>
-                        <div class="criteria-item" id="number-criteria">
-                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v4"></path>
-                                <path d="M12 16h.01"></path>
-                            </svg>
-                            <span>Au moins un chiffre</span>
-                        </div>
-                        <div class="criteria-item" id="special-criteria">
-                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v4"></path>
-                                <path d="M12 16h.01"></path>
-                            </svg>
-                            <span>Au moins un caractère spécial</span>
-                        </div>
-                    </div>
                     <p class="form-error" id="new-password-error">Le mot de passe ne respecte pas les critères de sécurité.</p>
                 </div>
                 
@@ -187,41 +132,9 @@
                 
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" id="back-to-identification">Retour</button>
-                    <button type="button" class="btn btn-primary" id="continue-to-finalization">Continuer</button>
+                    <button type="button" class="btn btn-primary" id="save-password">Enregistrer</button>
                 </div>
             </form>
-            
-            <!-- Étape 3: Finalisation -->
-            <form id="finalization-form" class="form-step">
-                <div class="form-group checkbox-group">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="terms-checkbox" required>
-                        <span class="checkmark"></span>
-                        J'accepte les <a href="#" class="terms-link">conditions générales d'utilisation</a> et la <a href="#" class="terms-link">charte de confidentialité</a> de L'Assurance Retraite
-                    </label>
-                    <p class="form-error" id="terms-error">Vous devez accepter les conditions d'utilisation pour continuer.</p>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" id="back-to-password">Retour</button>
-                    <button type="button" class="btn btn-primary" id="finalize-reset" disabled>Terminer la réinitialisation</button>
-                </div>
-            </form>
-            
-            <!-- Confirmation Message -->
-            <div id="confirmation-message" class="form-step">
-                <div class="success-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                </div>
-                <h2>Votre mot de passe a été modifié avec succès !</h2>
-                <p>Vous pouvez maintenant vous connecter à votre espace personnel avec votre nouveau mot de passe.</p>
-                <div class="form-actions" style="justify-content: center;">
-                    <a href="#" class="btn btn-primary">Retour à l'accueil</a>
-                </div>
-            </div>
 
             <!-- Alerte de Phishing -->
             <div id="phishing-alert" class="phishing-alert" style="display: none;">
@@ -271,10 +184,5 @@
     </footer>
 
     <script src="scripts/modified_main.js"></script>
-    <script>
-        document.getElementById('close-phishing-alert').addEventListener('click', function () {
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>
