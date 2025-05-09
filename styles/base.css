@@ -1,0 +1,93 @@
+/**
+ * base.css - Styles de base et réinitialisation
+ * 
+ * Ce fichier contient:
+ * 1. Reset CSS
+ * 2. Styles généraux du corps de la page
+ * 3. Styles de base pour l'en-tête et le pied de page
+ */
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f2f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation menu */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 20px;
+}
+
+.nav-item {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Personal space button */
+.personal-space-btn {
+    background-color: #0071b9;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.personal-space-btn span {
+    margin-left: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+}
+
+/* Responsive design - Base */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}

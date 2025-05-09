@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialisation de mot de passe | L'Assurance retraite</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/alert.css">
+    <link rel="icon" href="assets/favicon.png">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="assets/logo_retraite.png" alt="Logo L'Assurance Retraite">
+        </a>
+        <nav>
+            <div class="nav-menu">
+                <a href="maintenance.html" class="nav-item">Je suis actif</a>
+                <a href="maintenance.html" class="nav-item">Je suis retraité</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <a href="#" class="personal-space-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Mon espace personnel</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="form-container">
+            <h1 class="form-heading">Réinitialisation de votre mot de passe</h1>
+            <p class="form-subheading">Pour réinitialiser votre mot de passe, veuillez suivre les étapes suivantes.</p>
+            
+            <div class="progress-steps">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Identification</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Nouveau mot de passe</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Finalisation</div>
+                </div>
+            </div>
+            
+            <div class="security-notice">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Pour votre sécurité
+                </h3>
+                <p>Afin de protéger vos informations personnelles, nous devons vérifier votre identité avant de procéder à la réinitialisation de votre mot de passe.</p>
+            </div>
+            
+            <!-- Étape 1: Identification -->
+            <form id="identification-form" class="form-step active">
+                <div class="form-group">
+                    <label for="nir" class="form-label">N° de Sécurité Sociale <span class="form-required">*</span></label>
+                    <input type="text" id="nir" class="form-control" required pattern="[0-9]{13}" maxlength="13">
+                    <p class="form-hint">Votre numéro à 13 chiffres, sans la clé de contrôle</p>
+                    <p class="form-error" id="nir-error">Veuillez saisir un numéro de sécurité sociale valide à 13 chiffres.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Adresse e-mail <span class="form-required">*</span></label>
+                    <input type="email" id="email" class="form-control" required>
+                    <p class="form-hint">L'adresse e-mail associée à votre compte</p>
+                    <p class="form-error" id="email-error">Veuillez saisir une adresse e-mail valide.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate" class="form-label">Date de naissance <span class="form-required">*</span></label>
+                    <input type="date" id="birthdate" class="form-control" required>
+                    <p class="form-error" id="birthdate-error">Veuillez saisir votre date de naissance.</p>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-primary" id="continue-to-password">Continuer</button>
+                </div>
+            </form>
+            
+            <!-- Étape 2: Nouveau mot de passe -->
+            <form id="password-form" class="form-step">
+                <div class="form-group">
+                    <label for="new-password" class="form-label">Nouveau mot de passe <span class="form-required">*</span></label>
+                    <div class="password-input-container">
+                        <input type="password" id="new-password" class="form-control" required>
+                        <button type="button" class="toggle-password" data-target="new-password" aria-label="Afficher/masquer le mot de passe">
+                            <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="form-hint">Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial</p>
+                    <div class="password-strength">
+                        <div class="strength-meter">
+                            <div class="meter-section" id="meter-section-1"></div>
+                            <div class="meter-section" id="meter-section-2"></div>
+                            <div class="meter-section" id="meter-section-3"></div>
+                            <div class="meter-section" id="meter-section-4"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text">Faible</span>
+                    </div>
+                    <div class="password-criteria">
+                        <div class="criteria-item" id="length-criteria">
+                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                            <span>Au moins 8 caractères</span>
+                        </div>
+                        <div class="criteria-item" id="uppercase-criteria">
+                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                            <span>Au moins une majuscule</span>
+                        </div>
+                        <div class="criteria-item" id="lowercase-criteria">
+                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                            <span>Au moins une minuscule</span>
+                        </div>
+                        <div class="criteria-item" id="number-criteria">
+                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                            <span>Au moins un chiffre</span>
+                        </div>
+                        <div class="criteria-item" id="special-criteria">
+                            <svg class="criteria-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                            <span>Au moins un caractère spécial</span>
+                        </div>
+                    </div>
+                    <p class="form-error" id="new-password-error">Le mot de passe ne respecte pas les critères de sécurité.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Confirmer le nouveau mot de passe <span class="form-required">*</span></label>
+                    <div class="password-input-container">
+                        <input type="password" id="confirm-password" class="form-control" required>
+                        <button type="button" class="toggle-password" data-target="confirm-password" aria-label="Afficher/masquer le mot de passe">
+                            <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="form-error" id="confirm-password-error">Les mots de passe ne correspondent pas.</p>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="back-to-identification">Retour</button>
+                    <button type="button" class="btn btn-primary" id="continue-to-finalization">Continuer</button>
+                </div>
+            </form>
+            
+            <!-- Étape 3: Finalisation -->
+            <form id="finalization-form" class="form-step">
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms-checkbox" required>
+                        <span class="checkmark"></span>
+                        J'accepte les <a href="#" class="terms-link">conditions générales d'utilisation</a> et la <a href="#" class="terms-link">charte de confidentialité</a> de L'Assurance Retraite
+                    </label>
+                    <p class="form-error" id="terms-error">Vous devez accepter les conditions d'utilisation pour continuer.</p>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="back-to-password">Retour</button>
+                    <button type="button" class="btn btn-primary" id="finalize-reset" disabled>Terminer la réinitialisation</button>
+                </div>
+            </form>
+            
+            <!-- Confirmation Message -->
+            <div id="confirmation-message" class="form-step">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h2>Votre mot de passe a été modifié avec succès !</h2>
+                <p>Vous pouvez maintenant vous connecter à votre espace personnel avec votre nouveau mot de passe.</p>
+                <div class="form-actions" style="justify-content: center;">
+                    <a href="#" class="btn btn-primary">Retour à l'accueil</a>
+                </div>
+            </div>
+
+            <!-- Alerte de Phishing -->
+            <div id="phishing-alert" class="phishing-alert" style="display: none;">
+                <div class="alert-content">
+                    <h2 class="alert-title">ATTENTION : VOUS ÊTES TOMBÉ DANS LE PANNEAU !</h2>
+                    <p class="alert-message">Cette page est une simulation de phishing. Si cela avait été une vraie tentative, vos informations sensibles auraient pu être volées.</p>
+                    
+                    <h3 class="alert-subtitle">Les données que vous avez partagées :</h3>
+                    <div class="data-captured">
+                        <div class="data-item">
+                            <span class="data-label">N° de Sécurité Sociale :</span>
+                            <span id="captured-nir"></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Adresse e-mail :</span>
+                            <span id="captured-email"></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Date de naissance :</span>
+                            <span id="captured-birthdate"></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Nouveau mot de passe :</span>
+                            <span id="captured-new-password"></span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="alert-subtitle">Comment repérer une tentative de phishing :</h3>
+                    <ul class="phishing-tips">
+                        <li>Vérifiez toujours l'URL du site (elle peut ressembler à l'originale mais avoir des différences subtiles)</li>
+                        <li>Méfiez-vous des demandes urgentes ou menaçantes</li>
+                        <li>Regardez si le site a un certificat de sécurité (HTTPS)</li>
+                        <li>Attention aux fautes d'orthographe ou à une mise en page approximative</li>
+                        <li>Ne communiquez jamais vos données personnelles sans être certain de l'identité du destinataire</li>
+                    </ul>
+                    
+                    <button class="alert-button" id="close-phishing-alert">J'ai compris</button>
+
+                    <p class="phishing-notes">Note : Cette page est uniquement à but éducatif pour sensibiliser aux dangers du phishing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 L'Assurance Retraite. Tous droits réservés.</p>
+    </footer>
+
+    <script src="scripts/modified_main.js"></script>
+    <script>
+        document.getElementById('close-phishing-alert').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

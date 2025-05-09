@@ -1,0 +1,154 @@
+/**
+ * alert.css - Styles de l'alerte de phishing
+ * 
+ * Ce fichier contient tous les styles spécifiques à l'alerte 
+ * de sensibilisation qui apparaît après la tentative de phishing
+ */
+
+/* Phishing Alert Modal */
+.phishing-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none; /* Caché par défaut */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.alert-content {
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    animation: bounce 0.4s ease;
+    overflow: hidden;
+}
+
+/* Animation d'entrée */
+@keyframes bounce {
+    0% { transform: scale(0.9); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Titres et messages */
+.alert-title {
+    font-size: 24px;
+    color: #d63031;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-message {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.alert-subtitle {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Données capturées */
+.data-captured {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.data-label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Bouton d'alerte */
+.alert-button {
+    background-color: #d63031;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.alert-button:hover {
+    background-color: #c0392b;
+}
+
+/* Conseils anti-phishing */
+.phishing-tips {
+    padding-left: 20px;
+    margin-top: 15px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.phishing-tips li {
+    margin-bottom: 8px;
+}
+
+/* Notes de bas de page */
+.phishing-notes {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+}
+
+/* Icône de l'alerte */
+.success-icon {
+    display: block;
+    margin: 0 auto 20px;
+    color: #d63031;
+    font-size: 60px;
+    text-align: center;
+}
+
+/* Responsive design pour l'alerte */
+@media (max-width: 768px) {
+    .alert-content {
+        padding: 20px;
+        margin: 15px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .alert-title {
+        font-size: 20px;
+    }
+    
+    .data-item {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+}
